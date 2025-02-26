@@ -5,6 +5,7 @@ import com.store.user_service.application.dtos.responses.UserResponseDto;
 import com.store.user_service.application.mappers.IUserRequestMapper;
 import com.store.user_service.domain.model.User;
 import com.store.user_service.domain.ports.in.IUserServicePort;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class UserController {
     private final IUserServicePort userServicePort;
 
     @PostMapping("/")
-    public ResponseEntity<UserResponseDto> createUser(@RequestBody UserRequestDto request) {
+    public ResponseEntity<UserResponseDto> createUser(@RequestBody @Valid UserRequestDto request) {
         User user = userRequestMapper.toModel(request);
         User user1 = userServicePort.create(user);
         UserResponseDto response = userRequestMapper.toResponse(user1);
