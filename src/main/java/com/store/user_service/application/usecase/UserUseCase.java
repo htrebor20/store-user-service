@@ -1,6 +1,7 @@
 package com.store.user_service.application.usecase;
 
-import com.store.user_service.domain.constants.Constants;
+import com.store.user_service.application.constants.Constants;
+import com.store.user_service.application.constants.ErrorMessages;
 import com.store.user_service.domain.exception.BadRequestValidationException;
 import com.store.user_service.domain.model.User;
 import com.store.user_service.domain.ports.in.IUserServicePort;
@@ -24,11 +25,11 @@ public class UserUseCase implements IUserServicePort {
     private void validateAge(User user) {
         LocalDate currentDate = LocalDate.now();
         if (user.getBirthdate() == null) {
-            throw new BadRequestValidationException(Constants.BIRTHDATE_MANDATORY_EXCEPTION_MESSAGE);
+            throw new BadRequestValidationException(ErrorMessages.BIRTHDATE_MANDATORY_EXCEPTION_MESSAGE);
         }
         int age = Period.between(user.getBirthdate(), currentDate).getYears();
-        if (age < 18) {
-            throw new BadRequestValidationException(Constants.AGE_VALIDATIONS_EXCEPTION_MESSAGE);
+        if (age < Constants.MINIMUM_AGE) {
+            throw new BadRequestValidationException(ErrorMessages.AGE_VALIDATIONS_EXCEPTION_MESSAGE);
         }
     }
 
