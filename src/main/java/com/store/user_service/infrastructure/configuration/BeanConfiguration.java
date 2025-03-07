@@ -2,6 +2,7 @@ package com.store.user_service.infrastructure.configuration;
 
 import com.store.user_service.application.usecase.UserUseCase;
 import com.store.user_service.domain.ports.in.IUserServicePort;
+import com.store.user_service.domain.ports.out.IEmailSenderPort;
 import com.store.user_service.domain.ports.out.IUserPersistencePort;
 import com.store.user_service.infrastructure.adapters.UserPersistenceAdapter;
 import com.store.user_service.infrastructure.mappers.IUserEntityMapper;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
     private final IUserEntityMapper  userEntityMapper;
     private final IUserRepository  userRepository;
+    private final IEmailSenderPort emailSenderPort;
 
     @Bean
     public IUserPersistencePort userPersistencePort() {
@@ -23,6 +25,6 @@ public class BeanConfiguration {
 
     @Bean
     public IUserServicePort restaurantServicePort() {
-        return new UserUseCase(userPersistencePort()) ;
+        return new UserUseCase(userPersistencePort(), emailSenderPort)  ;
     }
 }
