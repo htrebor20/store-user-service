@@ -4,4 +4,5 @@ import com.store.user_service.domain.model.User;
 
 public interface IUserPersistencePort {
     User saveUser (User user);
+    User findByEmail (String email);
 }
