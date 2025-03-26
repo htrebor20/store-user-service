@@ -24,7 +24,7 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public IUserServicePort restaurantServicePort() {
+    public IUserServicePort userServicePort() {
         return new UserUseCase(userPersistencePort(), emailSenderPort)  ;
     }
 }

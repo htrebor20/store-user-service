@@ -1,0 +1,17 @@
+*   [33mf2974fd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Merge pull request #3 from htrebor20/feature/add-swagger-docs
+[31m|[m[32m\[m  
+[31m|[m * [33m01853cb[m[33m ([m[1;31morigin/feature/add-swagger-docs[m[33m, [m[1;32mfeature/add-swagger-docs[m[33m)[m Implemented Swagger UI with Springdoc OpenAPI to document the API endpoints.
+[31m|[m[31m/[m  
+*   [33m97ac1b5[m Merge pull request #2 from htrebor20/feature/create-user
+[33m|[m[34m\[m  
+[33m|[m * [33m2e7de66[m[33m ([m[1;31morigin/remove-swagger-docs[m[33m, [m[1;31morigin/feature/create-user[m[33m, [m[1;32mremove-swagger-docs[m[33m, [m[1;32mfeature/create-user[m[33m)[m add validation email must be unique
+[33m|[m * [33mc396ebc[m add age validation
+[33m|[m * [33mee45b7d[m Add validations for user
+[33m|[m * [33m6ffde67[m Added exception handling
+[33m|[m * [33mcdff38f[m add user creation method
+[33m|[m[33m/[m  
+*   [33mcef7867[m Merge pull request #1 from htrebor20/feature/estructura-hexagonal
+[35m|[m[36m\[m  
+[35m|[m * [33m20ae836[m[33m ([m[1;31morigin/feature/estructura-hexagonal[m[33m, [m[1;32mfeature/estructura-hexagonal[m[33m)[m Added base classes for user_service
+[35m|[m[35m/[m  
+* [33mdcd2e20[m First commit

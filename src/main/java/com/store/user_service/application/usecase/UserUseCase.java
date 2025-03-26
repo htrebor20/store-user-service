@@ -25,6 +25,11 @@ public class UserUseCase implements IUserServicePort {
         return savedUser ;
     }
 
+    @Override
+    public User findByEmail(String email) {
+        return userPersistencePort.findByEmail(email) ;
+    }
+
     private void validateAge(User user) {
         LocalDate currentDate = LocalDate.now();
         if (user.getBirthdate() == null) {
